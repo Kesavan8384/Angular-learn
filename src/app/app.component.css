@@ -1,0 +1,14 @@
+.form-object{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field{
+    display: flex;
+    gap: 10px;
+}
+
+span{
+    color: red;
+}

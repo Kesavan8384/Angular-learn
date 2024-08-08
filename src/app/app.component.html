@@ -1,0 +1,117 @@
+<div>
+  <h1>Register Form</h1>
+
+  <div class="form-object" [formGroup]="personform">
+
+    <div class="form-field">
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id" >
+        <mat-error *ngIf="this.personform.get('id')?.errors?.['required']&&this.personform.get('id')?.touched">field is required</mat-error>
+      <mat-error *ngIf="this.personform.get('id')?.errors?.['pattern']">Number Only Valid</mat-error>
+      </mat-form-field>
+
+
+
+      <!-- <label for="">Id</label>
+      <input formControlName="id"  type="text"> -->
+      
+    </div>
+    <div class="form-field">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput >
+        <mat-error *ngIf="this.personform.get('name')?.errors?.['required']&&this.personform.get('name')?.touched">field is required</mat-error>
+        <mat-error *ngIf="this.personform.get('name')?.errors?.['pattern']">special character not allowed</mat-error></mat-form-field>
+      <!-- <label for="">Name</label>
+      <input formControlName="name"  type="text"> -->
+     
+      
+    </div>
+
+
+    <div class="form-field">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input  formControlName="email" matInput >
+        <mat-error *ngIf="this.personform.get('email')?.errors?.['required']&&this.personform.get('email')?.touched">field is required</mat-error>
+          <mat-error *ngIf="this.personform.get('email')?.errors?.['email']">email not valid</mat-error></mat-form-field>
+      <!-- <label for="">Email</label>
+      <input  formControlName="email"  type="text"> -->
+    
+    </div>
+
+
+    <div class="form-field">
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone"matInput >
+        <mat-error *ngIf="this.personform.get('phone')?.errors?.['required']&&this.personform.get('phone')?.touched">field is required</mat-error>
+        <mat-error *ngIf="this.personform.get('phone')?.errors?.['pattern']">number only valid</mat-error>
+       </mat-form-field>
+
+
+   
+ 
+    </div>
+
+    <div class="form-field">
+      <button mat-raised-button [disabled]="this.personform.invalid" (click)="Register()">Submit</button>
+
+    
+    </div>
+
+
+  </div>
+
+
+  <div>
+    <h1>Register user values</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>S.NO</th>
+          <th>Register Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <p *ngIf="this.formvalues.length==0">
+          no Data
+        </p>
+        <tr *ngFor="let item of this.formvalues;let index=index">
+          <td>{{index+1}}</td>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+        </tr>
+
+
+
+      </tbody>
+
+
+    </table>
+
+
+
+  </div>
+
+</div>
+
+<mat-tab-group>
+  <mat-tab label="First"> 
+    fsdgsafssafsa
+    
+    
+    
+    
+    1 </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
